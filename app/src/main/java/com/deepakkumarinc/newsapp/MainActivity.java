@@ -2,6 +2,7 @@ package com.deepakkumarinc.newsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView header;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         header = findViewById(R.id.header);
+
+
 //        setSupportActionBar(toolbar);
 
         String api = "a0bb2861e2de4550803fe17a1ab94bd8";
@@ -42,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
          pagerAdapter = new PagerAdapter(getSupportFragmentManager(),6);
          viewPager.setAdapter(pagerAdapter);
+
+
 
          tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
              @Override
@@ -88,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
          });
 
          viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+
     }
 
 }

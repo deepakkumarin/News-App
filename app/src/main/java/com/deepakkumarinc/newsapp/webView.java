@@ -17,7 +17,7 @@ public class webView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-        getSupportActionBar().hide();
+
 
 
         webView = findViewById(R.id.webView);

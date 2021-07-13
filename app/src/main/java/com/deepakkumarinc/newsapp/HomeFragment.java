@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.deepakkumarinc.newsapp.Adapters.Adapter;
 import com.deepakkumarinc.newsapp.Models.MainNews;
@@ -30,10 +31,13 @@ public class HomeFragment extends Fragment {
     String country="in";
     private RecyclerView recyclerViewOfHome;
 
+
     @Nullable
     @Override
     public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.homefragment,null);
+
+
 
         recyclerViewOfHome = v.findViewById(R.id.recyclerViewOfHome);
         modelList1 = new ArrayList<>();
@@ -41,10 +45,12 @@ public class HomeFragment extends Fragment {
         adapter = new Adapter(getContext(),modelList1);
         recyclerViewOfHome.setAdapter(adapter);
 
+
         findNews();
-        
 
         return v;
+
+
     }
 
     private void findNews() {
@@ -56,7 +62,10 @@ public class HomeFragment extends Fragment {
                 {
                     modelList1.addAll(response.body().getArticles());
                     adapter.notifyDataSetChanged();
+
+
                 }
+
 
             }
 
